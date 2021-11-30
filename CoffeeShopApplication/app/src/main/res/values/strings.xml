@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Coffee Shop Application</string>
+    <string name="title_activity_main_screen">MainScreenActivity</string>
+    <string name="tab_text_1">Menu</string>
+    <string name="tab_text_2">Cart</string>
+    <string name="tab_text_3">Manage</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+</resources>
