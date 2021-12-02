@@ -3,6 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/menuMenu"
+        android:title="@string/menu" />
+    <item
+        android:id="@+id/cartMenu"
+        android:title="@string/cart" />
+    <item
+        android:id="@+id/manageMenu"
+        android:title="@string/manage" />
+    <item
+        android:id="@+id/checkoutMenu"
+        android:title="@string/checkout" />
+    <item
         android:id="@+id/profileMenu"
         android:title="@string/profile"
         app:showAsAction="collapseActionView" />
