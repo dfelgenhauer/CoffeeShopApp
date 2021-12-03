@@ -1,27 +1,30 @@
 package com.dylanfelgenhauer.coffeeshop;
 
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MainScreenActivity extends AppCompatActivity {
+public class MainScreenActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView drawerList;
     private ArrayList<String> activityList = new ArrayList<>();
     private String [] list = {"Shop", "Cart", "Manage"};
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
+    private RecyclerView view1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +54,23 @@ public class MainScreenActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == 4) {
+        if (item.getTitle().equals("Menu")) {
+            startActivity(new Intent(MainScreenActivity.this, MenuActivity.class));
+        }
+        if (item.getTitle().equals("Cart")) {
+            startActivity(new Intent(MainScreenActivity.this, CartActivity.class));
+        }
+        if (item.getTitle().equals("Manage")) {
+            startActivity(new Intent(MainScreenActivity.this, ManageActivity.class));
+        }
+        if (item.getTitle().equals("Checkout")) {
             startActivity(new Intent(MainScreenActivity.this, CheckoutActivity.class));
+        }
+        if (item.getTitle().equals("Profile")) {
+            startActivity(new Intent(MainScreenActivity.this, ProfileActivity.class));
+        }
+        if (item.getTitle().equals("Settings")) {
+            startActivity(new Intent(MainScreenActivity.this, SettingsActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -81,5 +99,10 @@ public class MainScreenActivity extends AppCompatActivity {
             temp.add(list[i]);
         }
         return temp;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

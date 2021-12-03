@@ -7,13 +7,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class CheckoutActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout);
+        setContentView(R.layout.activity_cart);
+        Button btnSign = (Button)findViewById(R.id.check_button);
+        btnSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, CheckoutActivity.class));
+            }
+        });
     }
 
     @Override
@@ -25,22 +34,22 @@ public class CheckoutActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getTitle().equals("Menu")) {
-            startActivity(new Intent(CheckoutActivity.this, MenuActivity.class));
+            startActivity(new Intent(CartActivity.this, MenuActivity.class));
         }
         if (item.getTitle().equals("Cart")) {
-            startActivity(new Intent(CheckoutActivity.this, CartActivity.class));
+            startActivity(new Intent(CartActivity.this, CartActivity.class));
         }
         if (item.getTitle().equals("Manage")) {
-            startActivity(new Intent(CheckoutActivity.this, ManageActivity.class));
+            startActivity(new Intent(CartActivity.this, ManageActivity.class));
         }
         if (item.getTitle().equals("Checkout")) {
-            startActivity(new Intent(CheckoutActivity.this, CheckoutActivity.class));
+            startActivity(new Intent(CartActivity.this, CheckoutActivity.class));
         }
         if (item.getTitle().equals("Profile")) {
-            startActivity(new Intent(CheckoutActivity.this, ProfileActivity.class));
+            startActivity(new Intent(CartActivity.this, ProfileActivity.class));
         }
         if (item.getTitle().equals("Settings")) {
-            startActivity(new Intent(CheckoutActivity.this, SettingsActivity.class));
+            startActivity(new Intent(CartActivity.this, SettingsActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

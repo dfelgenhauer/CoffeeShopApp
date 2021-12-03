@@ -8,14 +8,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class CheckoutActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout);
+        setContentView(R.layout.activity_profile);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.opt_menu, menu);
@@ -25,22 +24,22 @@ public class CheckoutActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getTitle().equals("Menu")) {
-            startActivity(new Intent(CheckoutActivity.this, MenuActivity.class));
+            startActivity(new Intent(ProfileActivity.this, MenuActivity.class));
         }
         if (item.getTitle().equals("Cart")) {
-            startActivity(new Intent(CheckoutActivity.this, CartActivity.class));
+            startActivity(new Intent(ProfileActivity.this, CartActivity.class));
         }
         if (item.getTitle().equals("Manage")) {
-            startActivity(new Intent(CheckoutActivity.this, ManageActivity.class));
+            startActivity(new Intent(ProfileActivity.this, ManageActivity.class));
         }
         if (item.getTitle().equals("Checkout")) {
-            startActivity(new Intent(CheckoutActivity.this, CheckoutActivity.class));
+            startActivity(new Intent(ProfileActivity.this, CheckoutActivity.class));
         }
         if (item.getTitle().equals("Profile")) {
-            startActivity(new Intent(CheckoutActivity.this, ProfileActivity.class));
+            startActivity(new Intent(ProfileActivity.this, ProfileActivity.class));
         }
         if (item.getTitle().equals("Settings")) {
-            startActivity(new Intent(CheckoutActivity.this, SettingsActivity.class));
+            startActivity(new Intent(ProfileActivity.this, SettingsActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
